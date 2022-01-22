@@ -4,8 +4,8 @@ export default function Main() {
   return (
     <div>
       <div className="row justify-content-center">
-        <div className="col-md-6 bg-secondary">
-          <h1 className="bg-success">Form Validation</h1>
+        <div className="col-md-6 shadow-lg p-3 mb-5 bg-white rounded ">
+          <h1>Form Validation</h1>
           <input type="text" placeholder="Username" className="form-control" />
           <input type="email" placeholder="Email" className="form-control" />
           <input
@@ -19,7 +19,7 @@ export default function Main() {
             className="form-control"
           />
 
-          <button className="btn bg-success">Submit</button>
+          <button className="btn bg-success text-light">Submit</button>
         </div>
       </div>
     </div>

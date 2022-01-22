@@ -19,7 +19,7 @@ export default function Main() {
   function submit() {
     if (username.length < 8) {
       setEUsername("Please Enter a valid username.");
-    }
+    } else 
   }
 
   return (

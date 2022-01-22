@@ -23,6 +23,10 @@ button {
   margin: 10px !important;
   padding: 10px !important;
 }
+small {
+  color: red;
+  font-weight: bold;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

@@ -6,8 +6,20 @@ export default function Main() {
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
 
+  const [eUsername, setEUsername] = useState("");
+  const [eEmail, setEEmail] = useState("");
+  const [ePassword, setEPassword] = useState("");
+  const [eCPassword, setECPassword] = useState("");
+
+  const [uColor, setUColor] = useState("");
+  const [eColor, setEColor] = useState("");
+  const [pColor, setPColor] = useState("");
+  const [cpColor, setCPColor] = useState("");
+
   function submit() {
-    console.log(username + email + password + cPassword);
+    if (username.length < 8) {
+      setEUsername("Please Enter a valid username.");
+    }
   }
 
   return (
@@ -24,6 +36,7 @@ export default function Main() {
               setUsername(e.target.value);
             }}
           />
+          <small>{eUsername}</small>
           <input
             type="email"
             placeholder="Email"
@@ -33,6 +46,7 @@ export default function Main() {
               setEmail(e.target.value);
             }}
           />
+          <small>{eEmail}</small>
           <input
             type="password"
             placeholder="Password"
@@ -42,6 +56,7 @@ export default function Main() {
               setPassword(e.target.value);
             }}
           />
+          <small>{ePassword}</small>
           <input
             type="text"
             placeholder="Confirm Password"
@@ -51,7 +66,7 @@ export default function Main() {
               setCPassword(e.target.value);
             }}
           />
-
+          <small>{eCPassword}</small>
           <button
             className="btn bg-success text-light"
             onClick={() => submit()}

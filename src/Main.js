@@ -24,6 +24,30 @@ export default function Main() {
       setEUsername("Please Enter a valid username.");
       setUColor("red");
     }
+
+    if (email.includes("@")) {
+      setEEmail("");
+      setEColor("green");
+    } else {
+      setEEmail("Please Enter a valid Email.");
+      setEColor("red");
+    }
+
+    if (password.length > 8 && password.includes("*")) {
+      setEPassword("");
+      setPColor("green");
+    } else {
+      setEPassword("Please Enter a valid password.");
+      setPColor("red");
+    }
+
+    if (cPassword === password) {
+      setECPassword("");
+      setCPColor("green");
+    } else {
+      setECPassword("Password doesn't match.");
+      setCPColor("red");
+    }
   }
 
   return (
@@ -50,6 +74,7 @@ export default function Main() {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
+            style={{ borderColor: eColor }}
           />
           <small>{eEmail}</small>
           <input
@@ -60,6 +85,7 @@ export default function Main() {
             onChange={(e) => {
               setPassword(e.target.value);
             }}
+            style={{ borderColor: pColor }}
           />
           <small>{ePassword}</small>
           <input
@@ -70,14 +96,17 @@ export default function Main() {
             onChange={(e) => {
               setCPassword(e.target.value);
             }}
+            style={{ borderColor: cpColor }}
           />
           <small>{eCPassword}</small>
-          <button
-            className="btn bg-success text-light"
-            onClick={() => submit()}
-          >
-            Submit
-          </button>
+          <div>
+            <button
+              className="btn bg-success text-light"
+              onClick={() => submit()}
+            >
+              Submit
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -17,9 +17,13 @@ export default function Main() {
   const [cpColor, setCPColor] = useState("");
 
   function submit() {
-    if (username.length < 8) {
+    if (username.length > 8) {
+      setEUsername("");
+      setUColor("green");
+    } else {
       setEUsername("Please Enter a valid username.");
-    } else 
+      setUColor("red");
+    }
   }
 
   return (
@@ -35,6 +39,7 @@ export default function Main() {
             onChange={(e) => {
               setUsername(e.target.value);
             }}
+            style={{ borderColor: uColor }}
           />
           <small>{eUsername}</small>
           <input
